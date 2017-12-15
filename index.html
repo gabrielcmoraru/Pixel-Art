@@ -17,44 +17,45 @@
 				<button type="button" id="backgroundSun">Sun</button>
 				<button type="button" id="backgroundGalaxy">Galaxy</button>
 			</ul>
-			<!-- <ul type="none">
+			<ul type="none">
 				Canvas shadow :
-				<button type="button" name="canvas-shadow-left">Left</button>
-				<button type="button" name="canvas-shadow-right">Right</button>
-				Canvas background<input type="range" name="canvas-background"><button>Value</button>
-			</ul>
+				<button type="button" name="canvas_shadow_left">Left</button>
+				<button type="button" name="canvas_shadow_right">Right</button>
+				</ul>
 			<ul type="none">
-				Canvas opacity<input type="range" name="canvas-opacity"><button>Value</button>
-				Canvas border size<input type="range" name="canvas-border-size"><button>Value</button>
-			</ul>
-			<ul type="none">
-				Canvas border size<input type="range" name="canvas-border-size"><button>Value</button>
-				Canvas border color<input type="range" name="canvas-border-color"><button>Value</button>
-			</ul>
-			<ul type="none">
-				<li>Chose your pointer
-						<button type="button" name="pointer-dot">pointer-dot</button>
-						<button type="button" name="pointer-hand">pointer-hand</button>
-						<button type="button" name="pointer-brush">pointer-brush</button>
-				</li>
-				<li> -->
-					<h2>Choose Grid Size</h2>
 
+				Canvas opacity
+				<input type="range" name="canvas_opacity" id="canvas_opacity"  min="0" step="0.05" value="1" max="1" onchange="showOpacity(this.value)"><span id="opacityValue">1</span>
+
+				Canvas border size
+				<input type="range" name="canvas_border_size" id="canvas_border_size" min="1" step="0.5" value="1" max="50" onchange="showSize(this.value)"><span id="borderSizeValue"></span>
+
+
+				<p>Border Color</p>
+				<input class="jscolor" id="canvas_border_color" value="C1F900">
+				<p>Inner Color</p>
+				<input class="jscolor" id="canvas_inner_color" value="FF0000">
+
+				</ul>
+					<h2>Choose Grid Size</h2>
 					<form id="sizePicker">
 						<p>Grid Height:</p>
-						<input type="range" id="input_height" name="height" min="1" value="1" min="1" max="65" onchange="showHeight(this.value)"><span id="heightValue">0</span>
+						<input type="range" id="input_height" name="height" step="1" value="1" min="1" max="65" onchange="showHeight(this.value)"><span id="heightValue">0</span>
 						<p>Grid Width:</p>
-						<input type="range" id="input_width" name="width" min="1" value="1" min="1" max="65" onchange="showWidth(this.value)"><span id="widthValue">0</span>
+						<input type="range" id="input_width" name="width" step="1" value="1" min="1" max="65" onchange="showWidth(this.value)"><span id="widthValue">0</span>
 					</form>
-				</li>
-			</ul>
-			<ul>
+				<ul>
+
+				<ul type="none">
+				<button type="button" name="canvas_remove_lines" id="canvas_remove_lines">Remove Canvas Lines</button>
+				</ul>
+
 				<button id="colorSelector" class="jscolor {valueElement:null,value:'#00B4FF'}" >
 				  Pick a color
 				</button>
 			</ul>
+
 		</nav>
-		<h2>Design Canvas</h2>
 	<table id="pixel_canvas" oncontextmenu="return false;"></table>
 	<script src="designs.js"></script>
 </body>

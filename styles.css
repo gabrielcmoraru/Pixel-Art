@@ -35,11 +35,18 @@ td {
 	width: 20px;
 }
 
-button.jscolor{
+#colorSelector{
 	border:2px solid black;
 	border-radius: 5px;
+	width: 150px;
 }
 
-table.pixel_canvas{
+#pixel_canvas{
+	border: solid black 3px;
+}
 
+#canvas_border_color{
+	width:150;
+	height:150;
+	position:center;
 }

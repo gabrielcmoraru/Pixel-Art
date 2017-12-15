@@ -10,13 +10,24 @@ function showWidth(newValue)
 	document.getElementById('widthValue').innerHTML=newValue;
 	}
 
+function showOpacity(newValue)
+	{
+	document.getElementById('opacityValue').innerHTML=newValue;
+	}
+
+function showSize(newValue)
+	{
+	document.getElementById('borderSizeValue').innerHTML=newValue;
+	}
+
 
 //Grid Maker
+// --------------------------------------------------
 function makeGrid() {
 
 	//Gets height and width
-	const tr = $('#input_height').val();
-	const td = $('#input_width').val();
+	const trow = $('#input_height').val();
+	const tcell = $('#input_width').val();
 
 	//Gets the table
 	const canvas = $('#pixel_canvas');
@@ -25,17 +36,17 @@ function makeGrid() {
 	canvas.children().remove();
 
 	//Creates table tr and td
-	for (var x = 0; x < tr; x++) {
+	for (var x = 0; x < trow; x++) {
 	 canvas.append("<tr></tr>");
-	for (var y = 0; y < td; y++) {
-		canvas.children().last().append("<td></td>");
-	}
+		for (var y = 0; y < tcell; y++) {
+			canvas.children().last().append("<td></td>");
+		}
 	}
 
 //Adds the selected color on the whole table row
 canvas.on('dblclick', 'tr', function(event) {
 	event.preventDefault();
-		const colorGenerator = $('.jscolor').css('background-color');
+		const colorGenerator = $('#colorSelector').css('background-color');
 	$(this).css('background-color', colorGenerator);
 });
 
@@ -44,7 +55,7 @@ canvas.on('dblclick', 'tr', function(event) {
 canvas.mousedown(function(middleClk) {
 	if(middleClk.which === 2){
 	event.preventDefault();
-	const colorGenerator = $('.jscolor').css('background-color');
+	const colorGenerator = $('#colorSelector').css('background-color');
 		$(this).css('background-color', colorGenerator);
 	}
 });
@@ -58,7 +69,7 @@ canvas.mouseover(function(event) {
 $('td').mousedown(function(firstClk) {
 	if(firstClk.which === 1){
 	event.preventDefault();
-	const colorGenerator = $('.jscolor').css('background-color');
+	const colorGenerator = $('#colorSelector').css('background-color');
 		$(this).css('background-color', colorGenerator);
 	}
 });
@@ -67,7 +78,7 @@ $('td').mousedown(function(firstClk) {
 $('td').mousedown(function(secondClk) {
 	if(secondClk.which === 3){
 	event.preventDefault();
-	const colorGenerator = $('.jscolor').css('background-color');
+	const colorGenerator = $('#colorSelector').css('background-color');
 		$(this).css('background-color', '#FFFFFF');
 	}
 });
@@ -77,17 +88,61 @@ $('td').mousedown(function(secondClk) {
 $('td').mousemove(function(paint) {
 	if (paint.which === 1) {
 	event.preventDefault();
-	const colorGenerator = $('.jscolor').css('background-color');
+	const colorGenerator = $('#colorSelector').css('background-color');
 		$(this).css('background-color', colorGenerator);
 	}
 });
 
 }
 
-//Event listener for changes on the range value
-//and creates the grid according to changes
-$("input[type='range']").change(function(event) {
-	event.preventDefault(); //Cancels the default action of the input
+// Canvas beautify
+// ----------------------------------------------------
+
+//Update the canvas border color
+$('#canvas_border_color').on('change', function(event) {
+	const borderColor = $("option:selected", $(this));
+	const borderColorValue = '#' +this.value;
+	 $('#pixel_canvas').css('border-color', borderColorValue);
+});
+
+//Update the canvas inner color
+$('#canvas_inner_color').on('change', function(event) {
+	const innerColor = $("option:selected", $(this));
+	const innerColorValue = '#' +this.value;
+	 $('#pixel_canvas').css('background-color', innerColorValue);
+});
+
+//
+$('#canvas_opacity').on('change', function(event){
+	event.preventDefault();
+	const opacityCanvas = $('#canvas_opacity').val();
+		$('#pixel_canvas').css('opacity', opacityCanvas);
+});
+
+//
+$('#canvas_border_size').on('change', function(event){
+	event.preventDefault();
+	const borderSize = $('#canvas_border_size').val();
+		$('#pixel_canvas').css('border-width', borderSize);
+});
+
+//WORK IN PROGRESS---UNFINISHED (doesn't add the borders back....YET !)
+$('#canvas_remove_lines').click(function(event) {
+	event.preventDefault();
+	const z = $('#pixel_canvas td, tr, border').val();
+	 if (z===0){
+	 		$('#pixel_canvas td, tr').css('border', '1px solid black');
+	 } else{
+	 		$('#pixel_canvas td, tr').css('border', '0px');
+	 };
+
+});
+
+
+//Update the Grid Size when change is detected
+//Clears all cells
+$("#sizePicker").change(function(event) {
+	event.preventDefault();
 	makeGrid();
 });
 
