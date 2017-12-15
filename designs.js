@@ -32,27 +32,62 @@ function makeGrid() {
 	}
 	}
 
-//Adds the selected color on the table per mouse click
-canvas.on('mousedown', 'td', function(event) {
+//Adds the selected color on the whole table row
+canvas.on('dblclick', 'tr', function(event) {
 	event.preventDefault();
-	const colorGenerator = $('.jscolor').css('background-color');
+		const colorGenerator = $('.jscolor').css('background-color');
 	$(this).css('background-color', colorGenerator);
 });
 
-//Swaps the mouse cursor for a pointer when mouse is over Canvas
-canvas.on('mouseover', 'td', function(event) {
+//Adds the selected color on the whole table
+//except the one that the user has selected individualy
+canvas.mousedown(function(middleClk) {
+	if(middleClk.which === 2){
 	event.preventDefault();
 	const colorGenerator = $('.jscolor').css('background-color');
+		$(this).css('background-color', colorGenerator);
+	}
+});
+
+//Swaps the mouse cursor for a pointer when mouse is over Canvas
+canvas.mouseover(function(event) {
 	$(this).css('cursor', 'pointer');
 });
 
-//Adds the selected color while holding down left mouse button
+//Adds the selected color on the selected table cell
+$('td').mousedown(function(firstClk) {
+	if(firstClk.which === 1){
+	event.preventDefault();
+	const colorGenerator = $('.jscolor').css('background-color');
+		$(this).css('background-color', colorGenerator);
+	}
+});
+
+//Adds the color white(erases colors) on selected cell
+$('td').mousedown(function(secondClk) {
+	if(secondClk.which === 3){
+	event.preventDefault();
+	const colorGenerator = $('.jscolor').css('background-color');
+		$(this).css('background-color', '#FFFFFF');
+	}
+});
+
+//Adds the selected color on the selected table cells
+//while holding down first click
+$('td').mousemove(function(paint) {
+	if (paint.which === 1) {
+	event.preventDefault();
+	const colorGenerator = $('.jscolor').css('background-color');
+		$(this).css('background-color', colorGenerator);
+	}
+});
+
 }
 
 //Event listener for changes on the range value
 //and creates the grid according to changes
 $("input[type='range']").change(function(event) {
-	event.preventDefault(); //Anti-refresh,
+	event.preventDefault(); //Cancels the default action of the input
 	makeGrid();
 });
 
