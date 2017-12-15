@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Pixel Art Maker!</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
-</head>
-<body>
-    <h1>Lab: Pixel Art Maker</h1>
+	<head>
+		<title>Pixel Art Maker!</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="jscolor.js"></script>
+		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+	</head>
+	<body>
+		<h1>Lab: Pixel Art Maker</h1>
+		<h2>Control Panel</h2>
+		<navnav>
+			<ul type="none">Theme
+				<button type="button" id="backgroundMoon">Moon</button>
+				<button type="button" id="backgroundEarth">Earth</button>
+				<button type="button" id="backgroundSun">Sun</button>
+				<button type="button" id="backgroundGalaxy">Galaxy</button>
+			</ul>
+			<!-- <ul type="none">
+				Canvas shadow :
+				<button type="button" name="canvas-shadow-left">Left</button>
+				<button type="button" name="canvas-shadow-right">Right</button>
+				Canvas background<input type="range" name="canvas-background"><button>Value</button>
+			</ul>
+			<ul type="none">
+				Canvas opacity<input type="range" name="canvas-opacity"><button>Value</button>
+				Canvas border size<input type="range" name="canvas-border-size"><button>Value</button>
+			</ul>
+			<ul type="none">
+				Canvas border size<input type="range" name="canvas-border-size"><button>Value</button>
+				Canvas border color<input type="range" name="canvas-border-color"><button>Value</button>
+			</ul>
+			<ul type="none">
+				<li>Chose your pointer
+						<button type="button" name="pointer-dot">pointer-dot</button>
+						<button type="button" name="pointer-hand">pointer-hand</button>
+						<button type="button" name="pointer-brush">pointer-brush</button>
+				</li>
+				<li> -->
+					<h2>Choose Grid Size</h2>
 
-    <h2>Control Panel</h2>
-    <navnav>
-	<ul type="none">Theme
-		<button type="button" name="backgroud-moon">Moon</button>
-		<button type="button" name="backgroud-earth">Earth</button>
-		<button type="button" name="backgroud-sun">Sun</button>
-		<button type="button" name="backgroud-galaxy">Galaxy</button>
-	</ul>
-	<!-- <ul type="none">
-        Canvas shadow :
-        <button type="button" name="canvas-shadow-left">Left</button>
-        <button type="button" name="canvas-shadow-right">Right</button>
-       	Canvas background<input type="range" name="canvas-background"><button>Value</button>
-    </ul>
-    <ul type="none">
-    	Canvas opacity<input type="range" name="canvas-opacity"><button>Value</button>
-    	Canvas border size<input type="range" name="canvas-border-size"><button>Value</button>
-    </ul>
-    <ul type="none">
-    	Canvas border size<input type="range" name="canvas-border-size"><button>Value</button>
-    	Canvas border color<input type="range" name="canvas-border-color"><button>Value</button>
-	</ul>
-	<ul type="none">
-	<li>Chose your pointer
-		<button type="button" name="pointer-dot">pointer-dot</button>
-		<button type="button" name="pointer-hand">pointer-hand</button>
-		<button type="button" name="pointer-brush">pointer-brush</button>
-	</li>
-    <li> -->
-        <h2>Choose Grid Size</h2>
-    <form id="sizePicker">
-        <p>Grid Height:</p>
-        <input type="range" id="input_height" name="height" min="1" value="1" min="1" max="100" onchange="showHeight(this.value)"><span id="heightValue">0</span>
-        <p>Grid Width:</p>
-        <input type="range" id="input_width" name="width" min="1" value="1" min="1" max="100" onchange="showWidth(this.value)"><span id="widthValue">0</span>
-    </form>
-    </li>
-    </ul>
-    <ul>
-    	<h2>Pick A color</h2><input type="color" name="colorpicker">
-    </ul>
-    </nav>
-    <h2>Design Canvas</h2>
-    <table id="pixel_canvas"></table>
-    <script src="designs.js"></script>
+					<form id="sizePicker">
+						<p>Grid Height:</p>
+						<input type="range" id="input_height" name="height" min="1" value="1" min="1" max="65" onchange="showHeight(this.value)"><span id="heightValue">0</span>
+						<p>Grid Width:</p>
+						<input type="range" id="input_width" name="width" min="1" value="1" min="1" max="65" onchange="showWidth(this.value)"><span id="widthValue">0</span>
+					</form>
+				</li>
+			</ul>
+			<ul>
+				<button id="colorSelector" class="jscolor {valueElement:null,value:'#11D33C'}" >
+				  Pick a color
+				</button>
+			</ul>
+		</nav>
+		<h2>Design Canvas</h2>
+	<table id="pixel_canvas"></table>
+	<script src="designs.js"></script>
 </body>
 </html>
