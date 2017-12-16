@@ -1,11 +1,17 @@
 body {
+	background-image: url("xmas.jpg");
+	background-size: 100%;
+	position:  relative;
+	background-repeat: no-repeat;
+	background-position: center;
 	text-align: center;
 }
 
 h1 {
-	font-family: Monoton;
-	font-size: 70px;
+	font-family: 'Gloria Hallelujah', cursive;
+	font-size: 70px ;
 	margin: 0.2em;
+	color: white;
 }
 
 h2 {
@@ -14,6 +20,10 @@ h2 {
 
 h2:first-of-type {
 	margin-top: 0.5em;
+}
+
+h4{
+	margin-top: 5.5px;
 }
 
 table,
@@ -49,4 +59,53 @@ td {
 	width:150;
 	height:150;
 	position:center;
+}
+
+.vertical-menu-left {
+    width: 200px;
+    float: left;
+}
+
+.vertical-menu-left a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu-left a:hover {
+    background-color: #4ECDC4;
+}
+
+.vertical-menu-left a.title {
+    background-color: #CDB380;
+    color: black;
+}
+
+.vertical-menu-right {
+    width: 200px;
+    float: left;
+}
+
+.vertical-menu-right a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu-right a:hover {
+    background-color: #4ECDC4;
+}
+
+.vertical-menu-right a.title {
+    background-color: #CDB380;
+    color: black;
+}
+
+.vertical-menu-right a.legend {
+    background-color: #556270;
+    color: black;
 }

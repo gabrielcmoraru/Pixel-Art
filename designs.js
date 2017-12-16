@@ -93,8 +93,16 @@ $('td').mousemove(function(paint) {
 	}
 });
 
-}
+//
+$('td').mousemove(function(paint) {
+	if (paint.which === 3) {
+	event.preventDefault();
+	const colorGenerator = $('#colorSelector').css('background-color');
+		$(this).css('background-color', '#FFFFFF');
+	}
+});
 
+}
 // Canvas beautify
 // ----------------------------------------------------
 
@@ -126,17 +134,36 @@ $('#canvas_border_size').on('change', function(event){
 		$('#pixel_canvas').css('border-width', borderSize);
 });
 
-//WORK IN PROGRESS---UNFINISHED (doesn't add the borders back....YET !)
+//Remove the canvas inner lines
 $('#canvas_remove_lines').click(function(event) {
 	event.preventDefault();
-	const z = $('#pixel_canvas td, tr, border').val();
-	 if (z===0){
-	 		$('#pixel_canvas td, tr').css('border', '1px solid black');
+	const buttonPressed = $(this);
+	$(this).toggleClass('off');
+	 if (buttonPressed.is('.off')){
+	 		$('#pixel_canvas td, tr').css('border', '0px')
 	 } else{
-	 		$('#pixel_canvas td, tr').css('border', '0px');
+	 		$('#pixel_canvas td, tr').css('border', '1px solid black');
 	 };
-
 });
+
+//
+$('#canvas_shadow_left').click(function(event) {
+	$('#pixel_canvas').css({
+	 			'-webkit-box-shadow': '-24px -18px 15px 0px rgba(0,0,0,0.61)',
+	 			'-moz-box-shadow': '-24px -18px 15px 0px rgba(0,0,0,0.61)',
+				'box-shadow': '-24px -18px 15px 0px rgba(0,0,0,0.61)'
+	 		});
+});
+
+//
+$('#canvas_shadow_right').click(function(event) {
+	$('#pixel_canvas').css({
+	 			'-webkit-box-shadow': '24px -18px 15px 0px rgba(0,0,0,0.61)',
+	 			'-moz-box-shadow': '24px -18px 15px 0px rgba(0,0,0,0.61)',
+				'box-shadow': '24px -18px 15px 0px rgba(0,0,0,0.61)'
+	 		});
+});
+
 
 
 //Update the Grid Size when change is detected
