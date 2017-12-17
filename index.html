@@ -3,29 +3,35 @@
 	<head>
 		<title>Pixel Art Maker!</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/FileSaver.js" target="_blank""></script>
 		<script src="jscolor.js"></script>
+		<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+		<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
 		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 	</head>
 	<body>
+		<div class="centerArea">
 		<h1>Lab: Pixel Art Maker</h1>
+		<h2>--> Christmas Edition <--</h2>
 		<div class="vertical-menu-left">
 			<a class="title"><h3>Canvas Beautify</h3></a>
 			<a>
 				<form id="sizePicker" >
 					<p>Grid Height:</p>
-					<input type="range" id="input_height" name="height" step="1" value="1" min="1" max="40" onchange="showHeight(this.value)"><span id="heightValue">0</span>
+					<input type="range" id="input_height" name="height" step="1" value="1" min="1" max="30" onchange="showHeight(this.value)"><span id="heightValue">0</span>
 					<p>Grid Width:</p>
-					<input type="range" id="input_width" name="width" step="1" value="1" min="1" max="60" onchange="showWidth(this.value)"><span id="widthValue">0</span>
+					<input type="range" id="input_width" name="width" step="1" value="1" min="1" max="40" onchange="showWidth(this.value)"><span id="widthValue">0</span>
 				</form>
 			</a>
 			<a>
 				<p>Opacity</p>
-				<input type="range" name="canvas_opacity" id="canvas_opacity"  min="0" step="0.05" value="1" max="1" onchange="showOpacity(this.value)"><span style="border: 1px solid black; " id="opacityValue">1</span>
+				<input type="range" name="canvas_opacity" id="canvas_opacity"  min="0" step="0.05" value="1" max="1" onchange="showOpacity(this.value)"><span id="opacityValue">1</span>
 			</a>
 			<a>
 				<p>Border size</p>
-				<input type="range" name="canvas_border_size" id="canvas_border_size" min="1" step="0.5" value="1" max="50" onchange="showSize(this.value)"><span id="borderSizeValue"></span>
+				<input type="range" name="canvas_border_size" id="canvas_border_size" min="1" step="0.5" value="1" max="50" onchange="showSize(this.value)"><span id="borderSizeValue">3</span>
 			</a>
 			<a>
 				<button type="button" id="canvas_shadow_left" name="canvas_shadow_left">Shadow Left</button>
@@ -41,24 +47,36 @@
 			<a class="title"><h3>Color Pickers</h3></a>
 			<a>
 				<p> Border</p>
-				<input class="jscolor" name="canvas_border_color" id="canvas_border_color" value="C1F900">
+				<input class="jscolor" name="canvas_border_color" id="canvas_border_color" value="af4462">
 			</a>
 			<a>
 				<p> Inner</p>
-				<input class="jscolor" name="canvas_inner_color" id="canvas_inner_color" value="FF0000">
+				<input class="jscolor" name="canvas_inner_color" id="canvas_inner_color" value="beaa2f">
 			</a>
 			<a>
-				<button id="colorSelector" class="jscolor {valueElement:null,value:'#00FBFF'}">Paint Brush</button>
+				<button name="colorSelector" id="colorSelector" class="jscolor {valueElement:null,value:'#009688'}">Paint Brush</button>
 			</a>
-			<a class="legend">
-				<h4>Info</h4>
+			<a class="title"><h3>Extras</h3></a>
+			<a>
+				<button type="button" name="save_to_html" id="save_to_html">Save to HTML(Beta)</button>
+			</a>
+			<a>
+				<button type="button" name="grinch_edition" id="grinch_edition">Grinch Edition</button>
+			</a>
+			<!-- <a class="legend">
 				<p>1. Hold Left click to paint</p>
 				<p>2. Double left click = 1 horizontal line</p>
 				<p>3. Right click = replace box with white(can hold down too)</p>
-				<p>4. Middle click = fill canvas ;)</p>
-			</a>>
+			</a> -->
 		</div>
-	<table id="pixel_canvas" oncontextmenu="return false;" style="background-color: #ffffff";></table>
+	<table id="pixel_canvas" oncontextmenu="return false;" style="	background-color: #ffffff"></table>
+	</div>
 	<script src="designs.js"></script>
+	<footer class="footer">
+  <p>Created by: Gabriel C. Moraru, available on &nbsp;<a href="https://github.com/gabrielcmoraru/pixel-art" target="_blank"><i class="devicon-github-plain-wordmark colored" id="socialMedia"></i></a>,&nbsp;designed and fully tested on &nbsp;<a href="https://www.google.com/chrome/index.html" target="_blank"><i class="devicon-chrome-plain-wordmark colored" id="socialMedia"></i></a></p>
+  <p>Follow me on &nbsp;<a href="https://twitter.com/GabrielCMoraru" target="_blank"><i class="devicon-twitter-plain colored" id="socialMediaSmall"></i></a>&nbsp;or pop an <a href="mailto:gabrielcmoraru@gmail.com">Email</a></p>
+</footer>
+
 </body>
+
 </html>

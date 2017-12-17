@@ -21,7 +21,7 @@ function showSize(newValue)
 	}
 
 
-//Grid Maker
+//Grid
 // --------------------------------------------------
 function makeGrid() {
 
@@ -50,8 +50,8 @@ canvas.on('dblclick', 'tr', function(event) {
 	$(this).css('background-color', colorGenerator);
 });
 
-//Adds the selected color on the whole table
-//except the one that the user has selected individualy
+// Adds the selected color on the whole table
+// except the ones that the user has selected individualy
 canvas.mousedown(function(middleClk) {
 	if(middleClk.which === 2){
 	event.preventDefault();
@@ -93,7 +93,8 @@ $('td').mousemove(function(paint) {
 	}
 });
 
-//
+//Adds the color white(erases colors) on selected cell
+//while holding down second click
 $('td').mousemove(function(paint) {
 	if (paint.which === 3) {
 	event.preventDefault();
@@ -120,14 +121,14 @@ $('#canvas_inner_color').on('change', function(event) {
 	 $('#pixel_canvas').css('background-color', innerColorValue);
 });
 
-//
+//Update the canvas opacity
 $('#canvas_opacity').on('change', function(event){
 	event.preventDefault();
 	const opacityCanvas = $('#canvas_opacity').val();
 		$('#pixel_canvas').css('opacity', opacityCanvas);
 });
 
-//
+//Update the canvas border sieze
 $('#canvas_border_size').on('change', function(event){
 	event.preventDefault();
 	const borderSize = $('#canvas_border_size').val();
@@ -146,7 +147,7 @@ $('#canvas_remove_lines').click(function(event) {
 	 };
 });
 
-//
+//Add shadow left to canvas
 $('#canvas_shadow_left').click(function(event) {
 	$('#pixel_canvas').css({
 	 			'-webkit-box-shadow': '-24px -18px 15px 0px rgba(0,0,0,0.61)',
@@ -155,7 +156,7 @@ $('#canvas_shadow_left').click(function(event) {
 	 		});
 });
 
-//
+//Add shadow right to canvas
 $('#canvas_shadow_right').click(function(event) {
 	$('#pixel_canvas').css({
 	 			'-webkit-box-shadow': '24px -18px 15px 0px rgba(0,0,0,0.61)',
@@ -164,7 +165,21 @@ $('#canvas_shadow_right').click(function(event) {
 	 		});
 });
 
+//Save canvas to HTML(BETA VERSION..)
+$("#save_to_html").click( function(save) {
+  var picToFrame = $("#pixel_canvas").prop('outerHTML');
+  var filename = $("#input-fileName").val()
+  var blob = new Blob([picToFrame], {type: "charset=utf-8"});
+  saveAs(blob, filename+".html");
+});
 
+//Revert to a basic theme (aka Grinch Edition)
+$('#grinch_edition').click(function(grinch) {
+	$('body').css('background-image', 'url()')
+	$('h1').css('color', '#CDB380');
+	$('h2').css('color', '#CDB380');
+	$('h2').html('Not very Christmassy now...is it?')
+});
 
 //Update the Grid Size when change is detected
 //Clears all cells

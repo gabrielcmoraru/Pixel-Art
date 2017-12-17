@@ -1,10 +1,15 @@
+html,{
+	height: 100%
+}
 body {
 	background-image: url("xmas.jpg");
-	background-size: 100%;
+	background-size: cover;
 	position:  relative;
 	background-repeat: no-repeat;
 	background-position: center;
 	text-align: center;
+	display: flex;
+	flex-direction: column;
 }
 
 h1 {
@@ -15,15 +20,16 @@ h1 {
 }
 
 h2 {
-	margin: 1em 0 0.25em;
+	font-family: 'Gloria Hallelujah', cursive;
+	font-size: 30px ;
+	margin: 0.2em;
+	color: white;
 }
 
-h2:first-of-type {
-	margin-top: 0.5em;
-}
-
-h4{
-	margin-top: 5.5px;
+h3{
+	margin-top: 3px;
+	margin-bottom: 3px;
+	color: white;
 }
 
 table,
@@ -45,10 +51,47 @@ td {
 	width: 20px;
 }
 
+span {
+	box-decoration-break: clone;
+	margin: 0px;
+	padding: 5px;
+	border: 1px solid black;
+}
+
+p {
+	font-family: 'comic Sans', cursive;
+}
+
+a{
+	text-decoration: none;
+}
+
+button {
+	font-family: 'comic Sans', cursive;
+}
+
+.centerArea{
+	flex: 1 0 auto;
+}
+
+.footer {
+	background-color: #efefef;
+}
+
+#socialMedia{
+	font-size: 45px;
+}
+
+#socialMediaSmall{
+	font-size: 25px;
+}
+
 #colorSelector{
-	border:2px solid black;
-	border-radius: 5px;
-	width: 150px;
+	border:1px solid black;
+	border-radius: 10px;
+	width: 175px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 #pixel_canvas{
@@ -62,50 +105,50 @@ td {
 }
 
 .vertical-menu-left {
-    width: 200px;
-    float: left;
+	width: 200px;
+	float: left;
+	border: 1px solid black;
+	margin-bottom: 20px;
 }
 
 .vertical-menu-left a {
-    background-color: #eee;
-    color: black;
-    display: block;
-    padding: 12px;
-    text-decoration: none;
+	background-color: #eee;
+	color: black;
+	display: block;
+	padding: 12px;
+	text-decoration: none;
 }
 
 .vertical-menu-left a:hover {
-    background-color: #4ECDC4;
+	background-color: #ff9800;
 }
 
-.vertical-menu-left a.title {
-    background-color: #CDB380;
-    color: black;
+.vertical-menu-left .title {
+	background-color: #673ab7;
 }
 
 .vertical-menu-right {
-    width: 200px;
-    float: left;
+	width: 200px;
+	float: left;
+	border-right: 1px solid black;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
 }
 
+
 .vertical-menu-right a {
-    background-color: #eee;
-    color: black;
-    display: block;
-    padding: 12px;
-    text-decoration: none;
+	background-color: #eee;
+	color: black;
+	display: block;
+	padding: 12px;
+	text-decoration: none;
 }
 
 .vertical-menu-right a:hover {
-    background-color: #4ECDC4;
+	background-color: #ff9800;
 }
 
-.vertical-menu-right a.title {
-    background-color: #CDB380;
-    color: black;
-}
-
-.vertical-menu-right a.legend {
-    background-color: #556270;
-    color: black;
+.vertical-menu-right .title {
+	background-color: #673ab7;
+	color: black;
 }
