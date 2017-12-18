@@ -50,16 +50,6 @@ canvas.on('dblclick', 'tr', function(event) {
 	$(this).css('background-color', colorGenerator);
 });
 
-// Adds the selected color on the whole table
-// except the ones that the user has selected individualy
-canvas.mousedown(function(middleClk) {
-	if(middleClk.which === 2){
-	event.preventDefault();
-	const colorGenerator = $('#colorSelector').css('background-color');
-		$(this).css('background-color', colorGenerator);
-	}
-});
-
 //Swaps the mouse cursor for a pointer when mouse is over Canvas
 canvas.mouseover(function(event) {
 	$(this).css('cursor', 'pointer');
@@ -68,6 +58,16 @@ canvas.mouseover(function(event) {
 //Adds the selected color on the selected table cell
 $('td').mousedown(function(firstClk) {
 	if(firstClk.which === 1){
+	event.preventDefault();
+	const colorGenerator = $('#colorSelector').css('background-color');
+		$(this).css('background-color', colorGenerator);
+	}
+});
+
+//Adds the selected color on the selected table cells
+//while holding down first click
+$('td').mousemove(function(paint) {
+	if (paint.which === 1) {
 	event.preventDefault();
 	const colorGenerator = $('#colorSelector').css('background-color');
 		$(this).css('background-color', colorGenerator);
@@ -83,16 +83,6 @@ $('td').mousedown(function(secondClk) {
 	}
 });
 
-//Adds the selected color on the selected table cells
-//while holding down first click
-$('td').mousemove(function(paint) {
-	if (paint.which === 1) {
-	event.preventDefault();
-	const colorGenerator = $('#colorSelector').css('background-color');
-		$(this).css('background-color', colorGenerator);
-	}
-});
-
 //Adds the color white(erases colors) on selected cell
 //while holding down second click
 $('td').mousemove(function(paint) {
@@ -100,6 +90,15 @@ $('td').mousemove(function(paint) {
 	event.preventDefault();
 	const colorGenerator = $('#colorSelector').css('background-color');
 		$(this).css('background-color', '#FFFFFF');
+	}
+});
+
+//Removes a whole line(tr) from the table
+$('tr').mousedown(function(middleClk) {
+	if(middleClk.which === 2){
+	event.preventDefault();
+	const colorGenerator = $('#colorSelector').css('background-color');
+		$(this).remove();
 	}
 });
 
@@ -187,6 +186,7 @@ $("#sizePicker").change(function(event) {
 	event.preventDefault();
 	makeGrid();
 });
+
 
 
 
