@@ -1,3 +1,8 @@
+/*
+Created by Gabriel Moraru
+Email: gabrielcmoraru@gmail.com
+ */
+
 html,{
 	height: 100%
 }
@@ -11,14 +16,14 @@ body {
 }
 
 h1 {
-	font-family: 'Gloria Hallelujah', cursive;
+	font-family: 'Mountains of Christmas', cursive;
 	font-size: 70px ;
 	margin: 0.2em;
 	color: white;
 }
 
 h2 {
-	font-family: 'Gloria Hallelujah', cursive;
+	font-family: 'Mountains of Christmas', cursive;
 	font-size: 30px ;
 	margin: 0.2em;
 	color: white;
@@ -67,54 +72,7 @@ a{
 button {
 	font-family: 'comic Sans', cursive;
 	border-radius: 5px;
-}
-
-.tips {
-	margin:10px;
-	padding:10px;
-	border:1px solid red;
-	color: black;
-	background-color:yellow;
-	position: absolute;
-	z-index: 1;
-}
-
-.tips .tipstext {
-    visibility: hidden;
-    width: 270px;
-    background-color: yellow;
-    color: black;
-    text-align: center;
-    border-radius: 10px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    top: 125%;
-    left: 175%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-.tips:hover .tipstext {
-    visibility: visible;
-    opacity: 1;
-}
-
-.centerArea{
-	display: flex;
-	flex: 1 0 auto;
-	flex-wrap: wrap;
-	align-items: flex-start;
-	flex-direction: row;
-	justify-content: center;
-	margin-bottom: 20px;
-}
-
-.footer {
-	background-color: #efefef;
-	padding: 5px;
-	opacity: 0.80;
+	border: 1px solid black;
 }
 
 #socialMedia{
@@ -144,18 +102,77 @@ button {
 	position:center;
 }
 
+#grinch_edition{
+	color: black;
+	background-color: yellowgreen;
+	font-size:20px;
+}
+
+.tips {
+	margin: 10px;
+	padding: 10px;
+	border: 2px solid red;
+	color: blue;
+	background-color: yellow;
+	position: absolute;
+	z-index: 1;
+	opacity: 0.9;
+}
+
+.tips .tipstext {
+	visibility: hidden;
+	width: 270px;
+	background-color: yellow;
+	color: black;
+	text-align: center;
+	border-radius: 10px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	top: 125%;
+	left: 175%;
+	margin-left: -60px;
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+.tips:hover .tipstext {
+	visibility: visible;
+	opacity: 1;
+}
+
+.centerArea{
+	display: flex;
+	flex: 1 0 auto;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.footer {
+	background-color: #efefef;
+	padding: 5px;
+	opacity: 0.80;
+}
+
 .vertical-menu-left {
 	width: 200px;
 	border: 1px solid black;
+	font-family: 'comic Sans', cursive;
 }
 
 .vertical-menu-left a {
-	background-color: #eee;
+	background-color:lightseagreen ;
 	color: black;
 	display: block;
 	padding: 10px;
 	text-decoration: none;
-
+/* lightcoral */
+/* lightseagreen */
+/* lightskyblue */
+/* lemonchiffon */
 }
 
 .vertical-menu-left a:hover {
@@ -169,11 +186,12 @@ button {
 .vertical-menu-right {
 	width: 200px;
 	border: 1px solid black;
+	font-family: 'comic Sans', cursive;
 }
 
 
 .vertical-menu-right a {
-	background-color: #eee;
+	background-color: lightseagreen;
 	color: black;
 	display: block;
 	padding: 10px;

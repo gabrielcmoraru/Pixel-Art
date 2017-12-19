@@ -1,22 +1,36 @@
+<!--
+Created by Gabriel Moraru
+Email: gabrielcmoraru@gmail.com
+ -->
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8"/>
 		<title>Pixel Art Maker!</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/FileSaver.js" target="_blank""></script>
 		<script src="jscolor.js"></script>
 		<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
 		<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-		<link rel="stylesheet" href="styles.css">
 		<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-		<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lobster|Mountains+of+Christmas" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
 		<h1>Lab: Pixel Art Maker</h1>
-		<h2>--> Christmas Edition <--</h2>
+		<h2>Christmas Edition</h2>
 		<div class="centerArea">
 		<div class="vertical-menu-left">
-			<a class="title"><h3>Dynamic Grid<span class="tips">!?!?<span class="tipstext"><p>1. All the sliders can be fine tuned using the keyboard arrows after selecting them </p><p>2. Double left click = 1 horizontal line of the selected color</p><p>3. Right click = replace box with white(can hold down too)</p><p>4. Middle click will remove a row from the table even if it was painted</p><p>The rest I will let you find out on your own :)</p></span></span></h3></a>
+			<a class="title">
+				<h3>Dynamic Grid<span class="tips">?!?<span class="tipstext">
+				<p>1. All the sliders can be fine tuned using the keyboard arrows after selecting them </p>
+				<p>2. Double left click = 1 horizontal line of the selected color</p>
+				<p>3. Right click = replace box with white (can hold down too)</p>
+				<p>4. Middle click will remove the selected row from the table even if it was painted</p>
+				<p>The rest I will let you find out on your own :)</p></span></span>
+				</h3>
+			</a>
 				<a>
 				<form id="sizePicker" >
 					<p>Grid Height: </p>
@@ -45,7 +59,9 @@
 		</div>
 		<table id="pixel_canvas" oncontextmenu="return false;" style="background-color: #ffffff"></table>
 		<div class="vertical-menu-right">
-			<a class="title"><h3>Color Pickers</h3></a>
+			<a class="title">
+				<h3>Color Pickers</h3>
+			</a>
 			<a>
 				<p> Border</p>
 				<input class="jscolor" name="canvas_border_color" id="canvas_border_color" value="af4462">
@@ -55,23 +71,28 @@
 				<input class="jscolor" name="canvas_inner_color" id="canvas_inner_color" value="beaa2f">
 			</a>
 			<a>
-				<button name="colorSelector" id="colorSelector" class="jscolor {valueElement:null,value:'#009688'}">Paint Brush</button>
+				<button name="colorSelector" id="colorSelector" class="jscolor {valueElement:null,value:'#87cefa'}">Paint Brush</button>
 			</a>
 			<a class="title"><h3>Extras</h3></a>
 			<a>
 				<button type="button" name="save_to_html" id="save_to_html">Save to HTML(Beta)</button>
 			</a>
 			<a>
-				<button type="button" name="grinch_edition" id="grinch_edition">Grinch Edition</button>
+				<button type="button" name="grinch_edition" id="grinch_edition">End Christmas</button>
 			</a>
 		</div>
 	</div>
 	<script src="designs.js"></script>
 	<footer class="footer">
-  <p>Created by: Gabriel C. Moraru, available on &nbsp;<a href="https://github.com/gabrielcmoraru/pixel-art" target="_blank"><i class="devicon-github-plain-wordmark colored" id="socialMedia"></i></a>,&nbsp;designed and fully tested on &nbsp;<a href="https://www.google.com/chrome/index.html" target="_blank"><i class="devicon-chrome-plain-wordmark colored" id="socialMedia"></i></a></p>
-  <p>Follow me on &nbsp;<a href="https://twitter.com/GabrielCMoraru" target="_blank"><i class="devicon-twitter-plain colored" id="socialMediaSmall"></i></a>&nbsp;or pop an <a href="mailto:gabrielcmoraru@gmail.com">Email</a></p>
+	<p>Created by: Gabriel C. Moraru, available on &nbsp;<a href="https://github.com/gabrielcmoraru/pixel-art" target="_blank" title="GitHub" ><i class="devicon-github-plain-wordmark colored" id="socialMedia"></i></a>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="https://codepen.io/dashboard/" target="_blank" title="Code Pen" ><i class="fa fa-codepen" id="socialMedia"></a></i>
+	&nbsp;&nbsp;designed and fully tested on &nbsp;&nbsp;
+	<a href="https://www.google.com/chrome/index.html" target="_blank" title="Download Chrome"><i class="devicon-chrome-plain-wordmark colored" id="socialMedia"></i></a></p>
+	<p>Follow me on &nbsp;&nbsp;
+	<a href="https://twitter.com/GabrielCMoraru" target="_blank" title="Twitter"><i class="devicon-twitter-plain colored" id="socialMediaSmall"></i></a>
+	&nbsp;&nbsp;or pop an
+	<a href="mailto:gabrielcmoraru@gmail.com" title="Email">Email</a></p>
 </footer>
-
 </body>
-
 </html>
