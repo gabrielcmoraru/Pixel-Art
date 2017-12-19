@@ -150,10 +150,10 @@ $('#canvas_remove_lines').click(function(event) {
 	const buttonPressed = $(this);
 	$(this).toggleClass('off');
 	 if (buttonPressed.is('.off')){
-			$('#pixel_canvas td, tr').css('border', '0px')
+			$('#pixel_canvas td, tr').css('border', '0px');
 		} else{
 			$('#pixel_canvas td, tr').css('border', '1px solid black');
-	 };
+	 }
 });
 
 //Add shadow left to canvas
@@ -180,14 +180,14 @@ $('#canvas_shadow_right').click(function(event) {
 //Save canvas to HTML(BETA VERSION..)
 $("#save_to_html").click( function(save) {
 	var picToFrame = $("#pixel_canvas").prop('outerHTML');
-	var filename = $("#input-fileName").val()
+	var filename = $("#input-fileName").val();
 	var blob = new Blob([picToFrame], {type: "charset=utf-8"});
 	saveAs(blob, filename+".html");
 });
 
 //Revert to a basic theme (aka Grinch Edition)
 $('#grinch_edition').click(function(grinch) {
-	$('body').css('background-image', 'url()')
+	$('body').css('background-image', 'url()');
 	$('h1').css({
 		'color': '#99B2B7',
 		'font-family': 'Lobster'
@@ -196,12 +196,12 @@ $('#grinch_edition').click(function(grinch) {
 		'color': '#99B2B7',
 		'font-family': 'Lobster'
 	});
-	$('h2').html('Not very Christmassy now...is it?')
+	$('h2').html('Not very Christmassy now...is it?');
 	$('.vertical-menu-left a').css('background-color', '#6D9DA6');
 	$('.vertical-menu-left a.title').css('background-color', '#746767');
 	$('.vertical-menu-right a').css('background-color', '#6D9DA6');
 	$('.vertical-menu-right a.title').css('background-color', '#746767');
-	$('.vertical-menu-right').children('a').last().remove()
+	$('.vertical-menu-right').children('a').last().remove();
 });
 
 
