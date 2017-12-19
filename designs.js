@@ -32,29 +32,26 @@ function makeGrid() {
 	const trow = $('#input_height').val();
 	const tcell = $('#input_width').val();
 
-	//Gets the table
-	const canvas = $('#pixel_canvas');
-
 	//Resets canvas
-	canvas.children().remove();
+	$('#pixel_canvas').children().remove();
 
 	//Creates table tr and td
 	for (var x = 0; x < trow; x++) {
-	 canvas.append("<tr></tr>");
+	 $('#pixel_canvas').append("<tr></tr>");
 		for (var y = 0; y < tcell; y++) {
-			canvas.children().last().append("<td></td>");
+			$('#pixel_canvas').children().last().append("<td></td>");
 		}
 	}
 
 //Adds the selected color on the whole table row
-canvas.on('dblclick', 'tr', function(event) {
+$('#pixel_canvas').on('dblclick', 'tr', function(event) {
 	event.preventDefault();
 		const colorGenerator = $('#colorSelector').css('background-color');
 	$(this).css('background-color', colorGenerator);
 });
 
 //Swaps the mouse cursor for a pointer when mouse is over Canvas
-canvas.mouseover(function(event) {
+$('#pixel_canvas').mouseover(function(event) {
 	$(this).css('cursor', 'pointer');
 });
 
@@ -186,7 +183,7 @@ $("#save_to_html").click( function(save) {
 });
 
 //Revert to a basic theme (aka Grinch Edition)
-$('#grinch_edition').click(function(grinch) {
+$('.grinch_edition').click(function(grinch) {
 	$('body').css('background-image', 'url()');
 	$('h1').css({
 		'color': '#99B2B7',
